@@ -46,7 +46,7 @@ App.models.databrowserPage = new App.Model.PageModel({
 });
 
 App.models.weatherPage = new App.Model.PageModel({
-  title: 'Location and Weather Example',
+  title: 'Location and Weather',
   header: 'Location and Weather Example',
   geoText: 'Let’s grab your location and do something with it. Tap the button to find your location',
   geoButtonText : 'Get My Location',
