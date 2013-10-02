@@ -26,21 +26,21 @@ App.models.cloudcallPage = new App.Model.PageModel({
 App.models.statsPage = new App.Model.PageModel({
   title: 'Analytics',
   header: 'Analytics',
-  text: 'Go to the Stats section of the Studio and see if your device has been detected'
+  text: 'In addition to all of our App install/usage Analytics, you can also instrument your cloud code to see exactly how it is performing. Go to the Stats section of the Studio and see if your device has been detected'
 });
 
 App.models.nodePage = new App.Model.PageModel({
   title: 'Powered By Nodejs',
   header: 'Powered By Nodejs',
-  text: 'FeedHenry Apps are made much more powerful by our Node.js cloud code. You have all of the functionality of Node available to you including all of its modules',
+  text: 'FeedHenry Apps are made much more powerful by our Node.js cloud code. You have all of the functionality of Node available to you including all of its modules. This means you get powerful responsive business logic doing all the heavy lifting for your application.',
   titleWidth: '150'
 });
 
 App.models.databrowserPage = new App.Model.PageModel({
   title: 'Data Browser',
   header: 'Data Browser',
-  text: 'Enter your name and now tap this button to save your name in the Cloud.',
-  moreInfo: 'Go to the Data Browser in the Studio and see if you can find your name stored there.',
+  text: 'Enter your name and then tap the button to save your name in our cloud database',
+  moreInfo: 'Now go to the Data Browser section of the App Studio and see if you can find your name stored there.',
   inputFieldLabel: 'Please Enter Your Name',
   buttonText: 'Save'
 });
@@ -48,10 +48,10 @@ App.models.databrowserPage = new App.Model.PageModel({
 App.models.weatherPage = new App.Model.PageModel({
   title: 'Weather Info Sample',
   header: 'Weather Info Sample',
-  geoText: 'Now let’s grab your location and do something with it. Press here to find your location',
+  geoText: 'Let’s grab your location and do something with it. Tap the button to find your location',
   geoButtonText : 'Get My Location',
   geoLabelText: 'My Location',
-  getWeatherText: 'Now we are going to use that location to request weather information from an online web-service via our Cloud Code. Tap the button to do this.',
+  getWeatherText: 'Now we are going to use that location to request weather information from an online web-service via our cloud code. Tap the button to do this.',
   getWeatherButtonText: 'Get My Weather Info',
   titleWidth: '180'
 });
@@ -60,5 +60,5 @@ App.models.integrationPage = new App.Model.PageModel({
   title: 'Cloud Integration',
   header: 'Cloud Integration',
   titleWidth: '150',
-  text: 'Easily integration with you existing backends using Cloud Plugins'
+  text: 'You can easily integrate with all of your existing back-end systems using Cloud Plugins. Check out the the App Studio to see how to connect to Databases, Messaging, Analytics, SaaS, eCommerce, Logging, Data Storage, File Storage, Testing, Tools and File Storage'
 });
