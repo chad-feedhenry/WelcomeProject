@@ -8,9 +8,7 @@ var initialize = function(){
   $fh.act({
     act: 'recordActivity',
     req: {
-      document: {
-        'action': 'Client App Started'
-      }
+      'action': 'Client App Started'
     }
   }, function() {}, function() {});
 };

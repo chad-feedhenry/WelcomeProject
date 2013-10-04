@@ -5,9 +5,7 @@ var listActivity = require('./record_activity').listActivity;
 
 exports.hello = function(params, callback) {
   recordActivity({
-    document: {
-      "action": "Client called Cloud App"
-    }
+    "action": "Client called Cloud App"
   }, function(err, docs) {
     return callback(null, {
       text: 'Hello from FeedHenry'
@@ -17,9 +15,7 @@ exports.hello = function(params, callback) {
 
 exports.getWeather = function(params, callback) {
   recordActivity({
-    document: {
-      "action": "Cloud Weather Called"
-    }
+    "action": "Cloud Weather Called"
   }, function(err, docs) {
     return getWeather(params, callback);
   });
@@ -27,9 +23,7 @@ exports.getWeather = function(params, callback) {
 
 exports.saveData = function(params, callback) {
   recordActivity({
-    document: {
-      "action": "Save Data in Cloud"
-    }
+    "action": "Save Data in Cloud"
   }, function(err, docs) {
     return saveData(params, callback);
   });
