@@ -1,10 +1,18 @@
-/*global App, Backbone, Handlebars, MBP*/
+/*global App, Backbone, Handlebars, MBP, $fh*/
 var initialize = function(){
   MBP.preventZoom();
   MBP.enableActive();
   //FastClick.attach(document.body);
   App.routers.mainRoute = new App.Router.MainRoute();
   Backbone.history.start({pushState: true, root: document.location.pathname});
+  $fh.act({
+    act: 'recordActivity',
+    req: {
+      document: {
+        'action': 'Client App Started'
+      }
+    }
+  }, function() {}, function() {});
 };
 
 //check if cordova is available
