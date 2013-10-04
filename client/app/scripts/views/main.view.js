@@ -15,6 +15,7 @@ App.View.MainView = Backbone.View.extend({
   },
 
   initialize: function(){
+    // TODO: NO
     this.$el = $('body');
     this.mainViewContainer = $('#main_page');
     this.pageViewContainer = $('#page_view_container');

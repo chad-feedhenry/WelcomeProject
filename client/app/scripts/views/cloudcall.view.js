@@ -5,7 +5,7 @@ App.View.CloudcallView = App.View.BaseView.extend({
   model: App.models.cloudcallPage,
 
   events: {
-    'click .cloud-action': 'cloudCall'
+    'click .cloud-action-button': 'cloudCall'
   },
 
   initialize: function(){

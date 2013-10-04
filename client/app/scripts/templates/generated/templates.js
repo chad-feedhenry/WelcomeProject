@@ -15,7 +15,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.text) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.text; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</p>\n    <p><a class=\"btn btn-primary btn-lg cloud-action\"><i class=\"icon-external-link-sign\"></i> ";
+    + "</p>\n    <p><a class=\"btn btn-primary btn-lg cloud-action-button\"><i class=\"icon-external-link-sign\"></i> ";
   if (stack1 = helpers.buttonText) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.buttonText; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
