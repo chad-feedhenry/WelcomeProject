@@ -36,3 +36,9 @@ exports.recordActivity = function(params, callback) {
 exports.listActivity = function(params, callback) {
   return listActivity(params, callback);
 };
+
+exports.getTime = function(params, callback) {
+  return callback(null, {
+    time: new Date().getTime()
+  });  
+}
