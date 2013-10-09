@@ -47,7 +47,10 @@ exports.listActivity = function(params, callback) {
 
     console.log('loaded, current: ', res);
     var current_activity = JSON.parse(res);
-    current_activity.time = new Date().getTime();
-    return callback(null, current_activity);
+    var res = {
+      activity: current_activity,
+      time: new Date().getTime()
+    };
+    return callback(null, res);
   });
 };
