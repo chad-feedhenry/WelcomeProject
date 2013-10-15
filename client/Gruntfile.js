@@ -176,9 +176,7 @@ module.exports = function(grunt) {
       dist: {
         files: {
           src: [
-            '<%= yeoman.dist %>/js/{,*/}*.js',
-            '<%= yeoman.dist %>/css/{,*/}*.css',
-            '<%= yeoman.dist %>/fonts/{,*/}*.*'
+            '<%= yeoman.dist %>/js/{,*/}*.js'
           ]
         }
       }
@@ -193,8 +191,7 @@ module.exports = function(grunt) {
       options: {
         dirs: ['<%= yeoman.dist %>']
       },
-      html: ['<%= yeoman.dist %>/{,*/}*.html'],
-      css: ['<%= yeoman.dist %>/css/{,*/}*.css']
+      html: ['<%= yeoman.dist %>/{,*/}*.html']
     },
     imagemin: {
       dist: {
@@ -223,14 +220,13 @@ module.exports = function(grunt) {
       //
       //     <!-- build:css({.tmp,app}) styles/main.css -->
       //
-      // dist: {
-      //     files: {
-      //         '<%= yeoman.dist %>/styles/main.css': [
-      //             '.tmp/styles/{,*/}*.css',
-      //             '<%= yeoman.app %>/styles/{,*/}*.css'
-      //         ]
-      //     }
-      // }
+      //dist: {
+      //  files: {
+      //    '<%= yeoman.dist %>/css/main.css': [
+      //      '.tmp/css/{,*/}*.css'
+      //    ]
+      //  }
+      //}
     },
     htmlmin: {
       dist: {
