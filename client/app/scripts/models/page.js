@@ -13,20 +13,22 @@ App.models.introPage = new App.Model.PageModel({
               {className: 'nodejs-page', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Powered By Nodejs', menuSubTitle: 'Cloud code', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'bolt'},
               {className: 'cloud-integration', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Cloud Integration', menuSubTitle: 'Use Plugins', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'gears'},
               {className: 'weather-sample', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Example', menuSubTitle: 'Use Location', responsiveClass: 'col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-0', iconClass: 'sun'},
-              {className: 'stats-analytics', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Analytics', menuSubTitle: 'See the data', responsiveClass: 'col-md-2 col-md-offset-4 col-lg-2 col-lg-offset-0', iconClass: 'bar-chart'} ]
+              {className: 'stats-analytics', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Stats', menuSubTitle: 'See the data', responsiveClass: 'col-md-2 col-md-offset-4 col-lg-2 col-lg-offset-0', iconClass: 'bar-chart'} ]
 });
 
 App.models.cloudcallPage = new App.Model.PageModel({
   title: 'Cloud Action',
   header: 'Cloud Action',
   text: 'This client App is now connected to its matching Node.js cloud code on FeedHenry. Tap the button to request a response from the cloud.',
-  buttonText: 'Call Cloud'
+  buttonText: 'Call Cloud',
+  extraRes: 'Now check your stats page in the studio to see that this cloud call happen.'
 });
 
 App.models.statsPage = new App.Model.PageModel({
-  title: 'Analytics',
-  header: 'Analytics',
-  text: 'In addition to all of our App install/usage Analytics, you can also instrument your cloud code to see exactly how it is performing. Go to the Stats section of the Studio and see if your device has been detected'
+  title: 'Stats',
+  header: 'Stats',
+  titleWidth: '50',
+  text: 'In addition to all of our App install/usage Analytics, you can also instrument your cloud code to see exactly how it is performing. Go to the Stats section of the Studio and see if your device has been detected.'
 });
 
 App.models.nodePage = new App.Model.PageModel({
@@ -42,7 +44,8 @@ App.models.databrowserPage = new App.Model.PageModel({
   text: 'Enter your name and then tap the button to save your name in our cloud database',
   moreInfo: 'Now go to the Data Browser section of the App Studio and see if you can find your name stored there.',
   inputFieldLabel: 'Please Enter Your Name',
-  buttonText: 'Save'
+  buttonText: 'Save',
+  extraRes: 'Your data is now saved. Please go to studio and see your data using the Data Browser.'
 });
 
 App.models.weatherPage = new App.Model.PageModel({
@@ -60,5 +63,14 @@ App.models.integrationPage = new App.Model.PageModel({
   title: 'Cloud Integration',
   header: 'Cloud Integration',
   titleWidth: '150',
-  text: 'You can easily integrate with all of your existing back-end systems using Cloud Plugins. Check out the the App Studio to see how to connect to Databases, Messaging, Analytics, SaaS, eCommerce, Logging, Data Storage, File Storage, Testing, Tools and File Storage'
+  text: 'You can easily integrate with all of your existing back-end systems using Cloud Plugins. Check out the the App Studio to see how to connect to Databases, Messaging, Analytics, SaaS, eCommerce, Logging, Data Storage, File Storage, Testing, Tools and File Storage. A few examples including:',
+  plugins:[{img:'mysql.png'},
+          {img: 'oracle.png'},
+          {img: 'stripe.png'},
+          {img: 'loggly.png'},
+          {img: 's3.png'},
+          {img: 'mixpanel.png'},
+          {img: 'salesforce.png'},
+          {img: 'sendgrid.png'},
+          {img: 'paypal.png'}]
 });

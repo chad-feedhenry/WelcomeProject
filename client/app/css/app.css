@@ -145,6 +145,10 @@ h6 {
   margin-bottom: 5px;
 }
 
+.cloud_integration .plugins {
+  height: 110px;
+}
+
 /* Override Effeckt Animation speed */
 
 [data-effeckt-page].slide-from-left {

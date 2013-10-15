@@ -43,5 +43,6 @@ App.View.DatabrowserView = App.View.BaseView.extend({
 
   dataSaved: function(){
     this.$el.find('.response_content').addClass('alert-success').removeClass('alert-danger hidden').text(this.model.toJSON().moreInfo);
+    this.$el.find('.extra_response').removeClass('hidden');
   }
 });
