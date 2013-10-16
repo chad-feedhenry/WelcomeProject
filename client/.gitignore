@@ -5,3 +5,4 @@ dist
 app/fonts
 app/bower_components
 test/bower_components
+rep/*

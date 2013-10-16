@@ -140,6 +140,18 @@ module.exports = function(grunt) {
           ],
           helpers: ['test/mock/fh-init.js'],
           specs: 'test/spec/{,*/}*.js'
+          //uncomment these to enable code coverage report
+          /*
+          ,template: require('grunt-template-jasmine-istanbul'),
+          templateOptions: {
+            coverage: 'rep/coverage/coverage.json',
+            report: {
+              type: 'html',
+              options: {
+                dir: 'rep/coverage/html'
+              }
+            }
+          }*/
         }
       }
     },
