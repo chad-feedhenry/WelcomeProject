@@ -14,11 +14,9 @@ App.View.MainView = Backbone.View.extend({
     return hash;
   },
 
-  initialize: function(){
-    // TODO: NO
-    this.$el = $('body');
-    this.mainViewContainer = $('#main_page');
-    this.pageViewContainer = $('#page_view_container');
+  initialize: function(options){
+    this.mainViewContainer = options.mainContainer;
+    this.pageViewContainer = options.pageContainer;
     _.bindAll(this, 'cloudActionPage', 'dataBrowserPage', 'nodePage', 'cloudIntegrationPage', 'weatherPage', 'analyticsPage', 'backToIntro');
   },
 

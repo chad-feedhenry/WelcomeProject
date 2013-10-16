@@ -111,8 +111,34 @@ module.exports = function(grunt) {
     },
     jasmine: {
       all: {
-        /*src: '',*/
+        src: ['<%= yeoman.app %>/scripts/namespace.js',
+              '<%= yeoman.app %>/scripts/templates/generated/templates.js',
+              '<%= yeoman.app %>/scripts/routers/index.js',
+              '<%= yeoman.app %>/scripts/models/page.js',
+              '<%= yeoman.app %>/scripts/views/navbar.view.js',
+              '<%= yeoman.app %>/scripts/views/intro.view.js',
+              '<%= yeoman.app %>/scripts/views/viewbase.view.js',
+              '<%= yeoman.app %>/scripts/views/main.view.js',
+              '<%= yeoman.app %>/scripts/views/cloudcall.view.js',
+              '<%= yeoman.app %>/scripts/views/stats.view.js',
+              '<%= yeoman.app %>/scripts/views/nodepage.view.js',
+              '<%= yeoman.app %>/scripts/views/databrowser.view.js',
+              '<%= yeoman.app %>/scripts/views/weather.view.js',
+              '<%= yeoman.app %>/scripts/views/integration.view.js',
+              '<%= yeoman.app %>/scripts/init.js'
+        ],
         options: {
+          vendor: ['<%= yeoman.app %>/js/vendor/modernizr-2.6.2.min.js',
+                   '<%= yeoman.app %>/js/helper.js',
+                   '<%= yeoman.app %>/js/plugins.js',
+                   '<%= yeoman.app %>/js/effeckt.js',
+                   '<%= yeoman.app %>/bower_components/jquery/jquery.js',
+                   '<%= yeoman.app %>/bower_components/underscore/underscore.js',
+                   '<%= yeoman.app %>/bower_components/handlebars/handlebars.runtime.js',
+                   '<%= yeoman.app %>/bower_components/backbone/backbone.js',
+                   '<%= yeoman.app %>/bower_components/bootstrap/dist/js/bootstrap.js'
+          ],
+          helpers: ['test/mock/fh-init.js'],
           specs: 'test/spec/{,*/}*.js'
         }
       }
