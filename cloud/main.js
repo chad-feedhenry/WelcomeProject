@@ -1,7 +1,17 @@
 var getWeather = require('./weather').getWeather;
 var saveData = require('./databrowser').saveData;
+var connectDB = require('./databrowser').connectDB;
 var recordActivity = require('./record_activity').recordActivity;
 var listActivity = require('./record_activity').listActivity;
+
+var dbUrl = 'mongodb://127.0.0.1:27017/test';
+if(process.env && !process.env.FH_USE_LOCAL_DB && process.env.FH_MONGODB_CONN_URL){
+  dbUrl = process.env.FH_MONGODB_CONN_URL;
+}
+
+connectDB(dbUrl, function(){
+  
+});
 
 exports.hello = function(params, callback) {
   recordActivity({

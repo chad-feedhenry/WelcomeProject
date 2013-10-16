@@ -17,6 +17,7 @@ cacheClient.on('ready', function(){
 });
 cacheClient.on('error', function(error){
   console.log("Failed to connect cache", error);
+  cacheClient.end();
   cacheClient = undefined;
 });
 

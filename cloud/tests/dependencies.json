@@ -1,0 +1,33 @@
+{
+  "db": {
+    "cmd": ["/usr/local/bin/mongod", "--noauth"],
+    "log_file": "/tmp/mongo.log",
+    "wait_for": "socket",
+    "wait_for_options": {
+      "host": "127.0.0.1",
+      "port": "27017"
+    },
+    "timeout": 20000
+  },
+  "cache": {
+    "cmd": ["/usr/local/bin/redis-server"],
+    "log_file": "/tmp/redis.log",
+    "wait_for": "socket",
+    "wait_for_options": {
+      "host": "127.0.0.1",
+      "port": "6379"
+    },
+    "timeout": 20000
+  },
+  "weather": {
+    "cmd": ["node", "weather_test_service.js"],
+    "cwd": ["__dirname"],
+    "log_file": "/tmp/weather.log",
+    "wait_for": "socket",
+    "wait_for_options": {
+      "host": "127.0.0.1",
+      "port": "9006"
+    },
+    "timeout": 20000
+  }
+}

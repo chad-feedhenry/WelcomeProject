@@ -1,20 +1,23 @@
 var MongoClient = require('mongodb').MongoClient;
-var dbUrl = 'mongodb://127.0.0.1:27017/test';
-if(process.env && process.env.FH_MONGODB_CONN_URL){
-  dbUrl = process.env.FH_MONGODB_CONN_URL;
-}
-console.log('dbUrl = ' + dbUrl);
-
 var dbConn;
-MongoClient.connect(dbUrl, function(err, db){
-  if(err){
-    console.log("Failed to connect to MongoDB", err);
-    dbConn = null;
-    return;
+
+exports.connectDB = function(dbUrl, cb){
+  if(null == dbConn){
+    console.log('dbUrl = ' + dbUrl);
+    MongoClient.connect(dbUrl, function(err, db){
+      if(err){
+        console.log("Failed to connect to MongoDB", err);
+        dbConn = null;
+        return cb(err, null);
+      }
+      dbConn = db;
+      console.log("Db connection established");
+      return cb(null, dbConn);
+    });
+  } else {
+    return cb(null, dbConn);
   }
-  dbConn = db;
-  console.log("Db connection established");
-});
+};
 
 exports.saveData = function(params, callback){
   if(dbConn == null){

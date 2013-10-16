@@ -8,8 +8,19 @@ var cacheClient = require('./cacheclient').cacheClient;
 var API_KEY = "qfyye6yt5hedsgk8v8ey7n3n";
 var CACHE_EXPIRE = 1*60*60; //cache weather data for 1 hour
 
+var WEATHER_PROVIDER_URL = "http://api.worldweatheronline.com/free/v1/weather.ashx";
+
+exports.setWeatherProvider = function(provider){
+  WEATHER_PROVIDER_URL = provider;
+};
+
+exports.getCacheClient = function(){
+  return cacheClient;
+};
+
 var fetchWeatherData = function(latitude, longitude, callback){
-  var url = "http://api.worldweatheronline.com/free/v1/weather.ashx";
+  var url = WEATHER_PROVIDER_URL;
+  console.log("provider url", url);
   request({method: 'GET', url: url, qs: {
     q: latitude + "," + longitude,
     format: 'json',
@@ -43,7 +54,7 @@ var setInCache = function(cacheKey, data){
 };
 
 var processWeatherData = function(originData, callback){
-  console.log("Got weather data", originData);
+  console.log("Got weather data", JSON.stringify(originData));
   var result = originData.data.weather.map(function(item){
     return {
       date: item.date,
@@ -56,13 +67,20 @@ var processWeatherData = function(originData, callback){
   return callback(null, {data: result});
 };
 
+var getCacheKey = function(lat, lon){
+  var cachekey = "key_" + lat + "_" + lon;
+  cachekey = cachekey.replace(/\./g, '_');
+  return cachekey;
+};
+
+exports.getCacheKey = getCacheKey;
+
 exports.getWeather = function(params, callback){
   //service provided by worldweatheronline(http://developer.worldweatheronline.com/)
   //free plan, limit: 3 req/second and 500 req/hour
   var lat = parseFloat(params.lat).toFixed(3);
   var lon = parseFloat(params.lon).toFixed(3);
-  var cachekey = "key_" + lat + "_" + lon;
-  cachekey = cachekey.replace(/\./g, '_');
+  cachekey = getCacheKey(lat, lon);
   console.log("cache key is ", cachekey);
   //first, check if we have a cache version
   getFromCache(cachekey, function(err, cacheData){
