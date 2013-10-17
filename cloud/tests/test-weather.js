@@ -10,8 +10,8 @@ exports.dependencies = ['cache', 'weather'];
 
 exports.testGetWeather = function(test, assert){
   setWeatherProvider(SERVICE_PROVIDER);
-  var lat = parseFloat(0).toFixed(3);
-  var lon = parseFloat(0).toFixed(3);
+  var lat = 0;
+  var lon = 0;
   var cacheKey = getCacheKey(lat, lon);
   console.log("test cache key is ", cacheKey);
   var cacheClient = getCacheClient();

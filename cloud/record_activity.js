@@ -1,5 +1,9 @@
 var key = 'user_activity';
 
+exports.setCacheKey = function(cacheKey){
+  key = cacheKey;
+};
+
 exports.recordActivity = function(params, callback) {
   var activity = {
     created: new Date().getTime(),

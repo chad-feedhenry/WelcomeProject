@@ -20,7 +20,7 @@
     "timeout": 20000
   },
   "weather": {
-    "cmd": ["node", "weather_test_service.js"],
+    "cmd": ["node", "cmds/weather_test_service.js"],
     "cwd": ["__dirname"],
     "log_file": "/tmp/weather.log",
     "wait_for": "socket",
@@ -29,5 +29,18 @@
       "port": "9006"
     },
     "timeout": 20000
+  },
+  "acceptance": {
+    "cmd": ["tests/cmds/start-cloud.sh"],
+    "kill_script": "tests/cmds/kill-cloud.sh",
+    "log_file": "/tmp/cloud.log",
+    "cwd": ["__dirname", ".."],
+    "depends": ["db", "cache"],
+    "wait_for": "socket",
+    "wait_for_options": {
+      "host": "127.0.0.1",
+      "port": "8002"
+    },
+    "timeout": 10000
   }
 }

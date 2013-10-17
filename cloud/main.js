@@ -10,7 +10,7 @@ if(process.env && !process.env.FH_USE_LOCAL_DB && process.env.FH_MONGODB_CONN_UR
 }
 
 connectDB(dbUrl, function(){
-  
+
 });
 
 exports.hello = function(params, callback) {
@@ -50,5 +50,5 @@ exports.listActivity = function(params, callback) {
 exports.getTime = function(params, callback) {
   return callback(null, {
     time: new Date().getTime()
-  });  
-}
+  });
+};

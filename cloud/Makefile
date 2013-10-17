@@ -1,8 +1,12 @@
-TEST_FILES=tests/test-databrowser.js tests/test-weather.js
+TEST_FILES=tests/test-databrowser.js tests/test-weather.js tests/test-activity.js
 DEP=tests/dependencies.json
+ACCEPT_TEST=tests/acceptance-tests.js
 
 test:
 	whiskey --tests "${TEST_FILES}" --only-essential-dependencies --dependencies "${DEP}"
+
+accept:
+	whiskey --tests "${ACCEPT_TEST}" --only-essential-dependencies --dependencies "${DEP}"
 
 test-fast:
 	whiskey --tests "${TEST_FILES}" --dependencies  "${DEP}" --only-essential-dependencies --failfast

@@ -67,7 +67,9 @@ var processWeatherData = function(originData, callback){
   return callback(null, {data: result});
 };
 
-var getCacheKey = function(lat, lon){
+var getCacheKey = function(lati, longi){
+  var lat = parseFloat(lati).toFixed(3);
+  var lon = parseFloat(longi).toFixed(3);
   var cachekey = "key_" + lat + "_" + lon;
   cachekey = cachekey.replace(/\./g, '_');
   return cachekey;
@@ -78,8 +80,10 @@ exports.getCacheKey = getCacheKey;
 exports.getWeather = function(params, callback){
   //service provided by worldweatheronline(http://developer.worldweatheronline.com/)
   //free plan, limit: 3 req/second and 500 req/hour
-  var lat = parseFloat(params.lat).toFixed(3);
-  var lon = parseFloat(params.lon).toFixed(3);
+  var lat = params.lat;
+  var lon = params.lon;
+  console.log("lat", lat);
+  console.log("longi", lon);
   cachekey = getCacheKey(lat, lon);
   console.log("cache key is ", cachekey);
   //first, check if we have a cache version
