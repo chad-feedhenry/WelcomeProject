@@ -1,6 +1,7 @@
 var MongoClient = require('mongodb').MongoClient;
 var dbConn;
 
+//setup mongo db
 exports.connectDB = function(dbUrl, cb){
   if(null == dbConn){
     console.log('dbUrl = ' + dbUrl);
@@ -19,6 +20,7 @@ exports.connectDB = function(dbUrl, cb){
   }
 };
 
+//save the data into the db
 exports.saveData = function(params, callback){
   if(dbConn == null){
     return callback("DB connection error");

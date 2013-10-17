@@ -1,3 +1,6 @@
+//customize app cloud logic, all the public functions defined here will be accessible using the url:
+//http://<host>/cloud/<function name>
+
 var getWeather = require('./weather').getWeather;
 var saveData = require('./databrowser').saveData;
 var connectDB = require('./databrowser').connectDB;

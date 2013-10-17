@@ -1,3 +1,4 @@
+//initialize redis cache client
 var redis = require('redis');
 var port = 6379;
 var host = '127.0.0.1';

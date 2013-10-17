@@ -1,3 +1,4 @@
+# Define tasks for running tests
 TEST_FILES=tests/test-databrowser.js tests/test-weather.js tests/test-activity.js
 DEP=tests/dependencies.json
 ACCEPT_TEST=tests/acceptance-tests.js

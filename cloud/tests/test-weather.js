@@ -1,4 +1,4 @@
-
+//test getWeather function, use mock service
 var getWeather = require('../weather').getWeather;
 var setWeatherProvider = require('../weather').setWeatherProvider;
 var getCacheClient = require("../weather").getCacheClient;

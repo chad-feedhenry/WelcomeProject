@@ -1,3 +1,4 @@
+//acceptance tests
 var request = require("request");
 
 exports.dependencies = ['acceptance'];

@@ -1,3 +1,4 @@
+//test app activity function
 var cacheClient = require("../cacheclient").cacheClient;
 
 $fh = {};

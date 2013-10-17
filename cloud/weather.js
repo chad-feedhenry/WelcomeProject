@@ -1,3 +1,4 @@
+//an example of integrating with third-party services.
 var RateLimiter = require('limiter').RateLimiter;
 var secondLimiter = new RateLimiter(3, 'second');
 var hourLimiter = new RateLimiter(500, 'hour');

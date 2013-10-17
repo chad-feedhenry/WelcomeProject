@@ -1,3 +1,4 @@
+//record app activities in the cache
 var key = 'user_activity';
 
 exports.setCacheKey = function(cacheKey){
