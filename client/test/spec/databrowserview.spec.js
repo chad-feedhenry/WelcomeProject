@@ -1,4 +1,5 @@
-/*global describe, it, beforeEach, afterEach, expect, App */
+/*jshint unused:false */
+/*global describe, it, beforeEach, afterEach, expect, App, $fh*/
 describe('render data browser page', function(){
   var pageDiv = $('<div>', {id:'page_view_container'});
   var view = new App.View.DatabrowserView({

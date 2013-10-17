@@ -1,3 +1,4 @@
+/*jshint unused:false */
 /*global describe, it, beforeEach, afterEach, expect, App */
 describe('render stats page', function(){
   var pageDiv = $('<div>', {id:'page_view_container'});

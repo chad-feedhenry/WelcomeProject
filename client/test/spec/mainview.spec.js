@@ -1,3 +1,4 @@
+/*jshint unused:false */
 /*global describe, it, beforeEach, afterEach, expect, App */
 describe('render main page', function(){
   var mainPageDiv = $('<div>', {id: 'main_page', 'class': 'page effeckt-page-active'});
