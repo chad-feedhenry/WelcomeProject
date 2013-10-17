@@ -14,6 +14,7 @@ var initialize = function(){
 };
 
 //check if cordova is available
+//initialize the app when page is load
 if(window.device && window.device.cordova){
   document.addEventListener('deviceready', initialize, false);
 } else {

@@ -1,3 +1,4 @@
+//define name spaces
 var App = App || {};
 App.Model = App.Model || {};
 App.Collection = App.Collection || {};

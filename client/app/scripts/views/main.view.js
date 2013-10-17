@@ -1,4 +1,5 @@
 /*global App, Backbone, _, Effeckt*/
+/* Backbone View */
 App.View.MainView = Backbone.View.extend({
 
   events: function(){

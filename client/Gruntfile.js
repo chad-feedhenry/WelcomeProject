@@ -16,25 +16,31 @@ module.exports = function(grunt) {
 
   // configurable paths
   var yeomanConfig = {
+    //This is the directory where development work is done
     app: 'app',
+    //This is the directory the app will be served from
     dist: 'default'
   };
 
   grunt.initConfig({
     yeoman: yeomanConfig,
     watch: {
+      //generate css files everytime when .less files changed
       recess: {
         files: ['<%= yeoman.app %>/css/{,*/}*.less'],
         tasks: ['recess']
       },
+      //generate handlebars template files
       handlebars: {
         files: ['<%= yeoman.app %>/scripts/templates/{,*/}*.hbs'],
         tasks: ['handlebars']
       },
+      //copy css files to temp directory to add css prefixes
       styles: {
         files: ['<%= yeoman.app %>/css/{,*/}*.css'],
         tasks: ['copy:styles', 'autoprefixer']
       },
+      //this will auto reload the app in the browser when any file in the app dir is changed
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'
@@ -49,6 +55,7 @@ module.exports = function(grunt) {
         ]
       }
     },
+    //setup http server to serve the app, also enable live reload
     connect: {
       options: {
         port: 9008,
@@ -81,6 +88,7 @@ module.exports = function(grunt) {
         }
       }
     },
+    //clean the project
     clean: {
       options: {
         force: true
@@ -97,6 +105,7 @@ module.exports = function(grunt) {
       },
       server: '.tmp'
     },
+    //setup the jshint task
     jshint: {
       options: {
         jshintrc: '.jshintrc'
@@ -109,6 +118,7 @@ module.exports = function(grunt) {
         'test/spec/{,*/}*.js'
       ]
     },
+    //setup the jasmine tests
     jasmine: {
       all: {
         src: ['<%= yeoman.app %>/scripts/namespace.js',
@@ -155,6 +165,7 @@ module.exports = function(grunt) {
         }
       }
     },
+    //setup task to generate css files from less files
     recess: {
       dist: {
         options: {
@@ -166,6 +177,7 @@ module.exports = function(grunt) {
         }
       }
     },
+    //setup tasks to add css prefix 
     autoprefixer: {
       options: {
         browsers: ['last 1 version']
@@ -179,6 +191,7 @@ module.exports = function(grunt) {
         }]
       }
     },
+    //setup tasks to generate handlebars templates
     handlebars: {
       compile: {
         options: {
@@ -210,6 +223,7 @@ module.exports = function(grunt) {
     /*uglify: {
             dist: {}
         },*/
+    //setup tasks to prefix files with a revision number to clear client side browser cache
     rev: {
       dist: {
         files: {
@@ -219,18 +233,21 @@ module.exports = function(grunt) {
         }
       }
     },
+    //prepare for minification task
     useminPrepare: {
       options: {
         dest: '<%= yeoman.dist %>'
       },
       html: '<%= yeoman.app %>/index.html'
     },
+    //setup the task to do minification
     usemin: {
       options: {
         dirs: ['<%= yeoman.dist %>']
       },
       html: ['<%= yeoman.dist %>/{,*/}*.html']
     },
+    //minify png & jpeg images
     imagemin: {
       dist: {
         files: [{
@@ -241,6 +258,7 @@ module.exports = function(grunt) {
         }]
       }
     },
+    //minify svg files
     svgmin: {
       dist: {
         files: [{
@@ -251,6 +269,7 @@ module.exports = function(grunt) {
         }]
       }
     },
+    //minify css files, already taken care of by usemin
     cssmin: {
       // This task is pre-configured if you do not wish to use Usemin
       // blocks for your CSS. By default, the Usemin block from your
@@ -266,6 +285,7 @@ module.exports = function(grunt) {
       //  }
       //}
     },
+    //minify html file
     htmlmin: {
       dist: {
         options: {
@@ -288,6 +308,7 @@ module.exports = function(grunt) {
       }
     },
     // Put files not handled in other tasks here
+    //copy files from the development directory to the distribution directory
     copy: {
       dist: {
         files: [{
@@ -325,6 +346,7 @@ module.exports = function(grunt) {
         }]
       }
     },
+    //run grunt tasks concurrently to improve build time
     concurrent: {
       server: [
         'recess',
@@ -347,6 +369,7 @@ module.exports = function(grunt) {
     }
   });
 
+  //grunt server tasks
   grunt.registerTask('server', function(target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
@@ -361,6 +384,7 @@ module.exports = function(grunt) {
     ]);
   });
 
+  //grunt test tasks
   grunt.registerTask('test', [
     'clean:server',
     'concurrent:test',
@@ -369,6 +393,7 @@ module.exports = function(grunt) {
     'jasmine'
   ]);
 
+  //grunt build tasks
   grunt.registerTask('build', [
     'clean:dist',
     'useminPrepare',
@@ -382,6 +407,7 @@ module.exports = function(grunt) {
     'usemin'
   ]);
 
+  //grunt tasks
   grunt.registerTask('default', [
     'jshint',
     'test',

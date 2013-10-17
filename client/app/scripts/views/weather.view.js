@@ -1,4 +1,5 @@
 /*global App, _, $fh*/
+/* Backbone View */
 App.View.WeatherSampleView = App.View.BaseView.extend({
 
   template: App.Templates.weather,

@@ -1,4 +1,5 @@
 /*global App, Backbone, _*/
+/* Backbone View */
 App.View.NavbarView = Backbone.View.extend({
 
   template: App.Templates.navbar,

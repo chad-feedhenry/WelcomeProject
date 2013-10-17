@@ -1,4 +1,5 @@
 /*global App, _, $fh*/
+/* Backbone View */
 App.View.DatabrowserView = App.View.BaseView.extend({
 
   template: App.Templates.databrowser,

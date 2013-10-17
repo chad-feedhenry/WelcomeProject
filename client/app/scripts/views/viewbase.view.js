@@ -1,4 +1,5 @@
 /*global App, Backbone*/
+/* Backbone View */
 App.View.BaseView = Backbone.View.extend({
   
   className: 'page_view',

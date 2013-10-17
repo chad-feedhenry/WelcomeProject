@@ -1,4 +1,5 @@
 /*global App, Backbone*/
+/* Define Backbone Models */
 App.Model.PageModel = Backbone.Model.extend({
 
 });
