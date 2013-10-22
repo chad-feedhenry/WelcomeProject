@@ -1,6 +1,6 @@
 # Overview
 
-This project is used to demonstrate some of the feeatures provided by the FeedHenry platform, as well as promoting best practices when developing apps using the platform.
+This project is used to demonstrate some of the features provided by the FeedHenry platform, as well as promoting best practices when developing apps using the platform.
 
 # Client App
 
@@ -26,7 +26,7 @@ For more details please check the README file in the cloud/ directory.
 
 # Development Setup
 
-If you want to develop the app, you can fork the repo and created a FeedHenry app either using the App Studio or fhc. Then you can clone the app and run the following command:
+If you want to develop the app, you can fork the repo and create a FeedHenry app either using the App Studio or fhc. Then you can clone the app and run the following command:
 
     fhc local <appId> packages=app
 
@@ -39,4 +39,4 @@ If you want to see the distribution version, run the following commands instead:
     cd ..
     fhc local <appId>
 
-Then do your normal development in the client/app directory and everytime when a file is changed, the distribution version will be generated automatically.
+Then do your normal development in the client/app directory and everytime a file is changed, the distribution version will be generated automatically.
