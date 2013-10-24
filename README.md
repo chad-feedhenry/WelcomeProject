@@ -1,5 +1,7 @@
 # Overview
 
+DEPRECATED: See https://github.com/feedhenry/welcome-project
+
 This project is used to demonstrate some of the features provided by the FeedHenry platform, as well as promoting best practices when developing apps using the platform.
 
 # Client App
